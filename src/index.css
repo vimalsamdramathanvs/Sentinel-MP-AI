@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@media print {
+  html,
+  body,
+  #root,
+  main {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+
+  header,
+  aside,
+  .no-print {
+    display: none !important;
+  }
+}
+

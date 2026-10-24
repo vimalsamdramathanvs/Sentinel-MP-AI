@@ -1,0 +1,12 @@
+{
+  "name": "SENTINEL MP-AI",
+  "description": "National AI-powered MPLADS risk intelligence, fraud detection, GIS mapping, multi-agent copilot, and compliance platform.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

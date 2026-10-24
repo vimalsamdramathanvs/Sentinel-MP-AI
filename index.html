@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      window.addEventListener('error', function (event) {
+        var msg = event && (event.message || (event.error && event.error.message) || '');
+        if (typeof msg === 'string' && (msg.indexOf('ResizeObserver loop') !== -1 || msg.indexOf('WebSocket closed without opened') !== -1)) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function (event) {
+        var msg = event && event.reason && (event.reason.message || String(event.reason));
+        if (typeof msg === 'string' && (msg.indexOf('WebSocket closed without opened') !== -1 || msg.indexOf('failed to connect to websocket') !== -1 || msg.indexOf('ResizeObserver loop') !== -1)) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }, true);
+    </script>
+    <title>SENTINEL MP-AI</title>
+    <meta name="description" content="National AI-powered MPLADS risk intelligence, fraud detection, GIS mapping, multi-agent copilot, and compliance platform." />
+    <meta property="og:title" content="SENTINEL MP-AI" />
+    <meta property="og:description" content="National AI-powered MPLADS risk intelligence, fraud detection, GIS mapping, multi-agent copilot, and compliance platform." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
